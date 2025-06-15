@@ -1,24 +1,14 @@
 import { NextResponse } from 'next/server';
-import { MongoClient, ObjectId } from 'mongodb';
 
-const uri = process.env.MONGODB_URI || 'mongodb+srv://nikoroferov:0nSgsH1aoZEjd0Sg@cluster0.oypbc.mongodb.net/';
-const client = new MongoClient(uri);
-
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    await client.connect();
-    const database = client.db('security-shop');
-    const products = await database.collection('products').find({}).toArray();
-    
-    return NextResponse.json(products);
+    return NextResponse.json({ message: 'API endpoint is ready' });
   } catch (error) {
-    console.error('Database error:', error);
+    console.error('Error in products API:', error);
     return NextResponse.json(
       { error: 'Internal Server Error' },
       { status: 500 }
     );
-  } finally {
-    await client.close();
   }
 }
 

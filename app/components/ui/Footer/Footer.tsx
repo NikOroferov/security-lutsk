@@ -1,18 +1,15 @@
-import { useTranslations } from 'next-intl';
 import styles from './Footer.module.css';
 
 export default function Footer() {
-  const t = useTranslations('contact');
-
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.section}>
-          <h3>{t('title')}</h3>
-          <p>{t('address')}: ул. Примерная, 123, Луцк</p>
-          <p>{t('phone')}: +38 (050) 123-45-67</p>
-          <p>{t('email')}: info@security-shop-lutsk.com</p>
-          <p>{t('workingHours')}: Пн-Пт 9:00 - 18:00</p>
+          <h3>Контактная информация</h3>
+          <p>Адрес: ул. Примерная, 123, Луцк</p>
+          <p>Телефон: +38 (050) 123-45-67</p>
+          <p>Email: info@security-shop-lutsk.com</p>
+          <p>Время работы: Пн-Пт 9:00 - 18:00</p>
         </div>
 
         <div className={styles.section}>

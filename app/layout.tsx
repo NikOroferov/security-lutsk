@@ -1,34 +1,30 @@
-import { redirect } from 'next/navigation';
-import { defaultLocale } from '../i18n';
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+import Header from './components/ui/Header/Header'
+import Footer from './components/ui/Footer/Footer'
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ['latin', 'cyrillic'] })
 
 export const metadata: Metadata = {
-  title: "Security Shop Lutsk",
-  description: "Магазин систем безопасности в Луцке",
-};
+  title: 'Security Lutsk - Системы безопасности в Луцке',
+  description: 'Современные системы безопасности и сигнализации в Луцке и Волынской области',
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
-    <html>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+    <html lang="ru">
+      <body className={inter.className}>
+        <Header />
+        <main>
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
-  );
+  )
 }

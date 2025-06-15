@@ -1,95 +1,103 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
+    <div className={styles.container}>
+      {/* Верхний баннер */}
+      <section className={styles.topBanner}>
+        <div className={styles.bannerContent}>
+          <h1 className={styles.bannerTitle}>Системы безопасности для вашего дома и бизнеса</h1>
+          <p className={styles.bannerDescription}>
+            Профессиональные решения для защиты вашей собственности
+          </p>
+          <a href="#contact" className={styles.bannerButton}>
+            Получить консультацию
           </a>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Категории */}
+      <section className={styles.categories}>
+        <h2 className={styles.sectionTitle}>Наши категории</h2>
+        <div className={styles.categoriesGrid}>
+          <div className={styles.categoryCard}>
+            <h3>Видеонаблюдение</h3>
+            <ul className={styles.categoryList}>
+              <li>IP-камеры</li>
+              <li>Аналоговые камеры</li>
+              <li>Видеорегистраторы</li>
+              <li>Комплекты видеонаблюдения</li>
+            </ul>
+          </div>
+          <div className={styles.categoryCard}>
+            <h3>Сигнализация</h3>
+            <ul className={styles.categoryList}>
+              <li>Охранные системы</li>
+              <li>Пожарная сигнализация</li>
+              <li>Контроль доступа</li>
+              <li>Датчики движения</li>
+            </ul>
+          </div>
+          <div className={styles.categoryCard}>
+            <h3>Сетевое оборудование</h3>
+            <ul className={styles.categoryList}>
+              <li>Коммутаторы</li>
+              <li>Маршрутизаторы</li>
+              <li>Кабели и разъемы</li>
+              <li>Источники питания</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Преимущества */}
+      <section className={styles.features}>
+        <h2 className={styles.sectionTitle}>Почему выбирают нас</h2>
+        <div className={styles.featuresGrid}>
+          <div className={styles.featureCard}>
+            <h3>Профессиональный монтаж</h3>
+            <p>Опытные специалисты выполнят установку любой сложности</p>
+          </div>
+          <div className={styles.featureCard}>
+            <h3>Гарантия качества</h3>
+            <p>Все оборудование имеет официальную гарантию</p>
+          </div>
+          <div className={styles.featureCard}>
+            <h3>Техническая поддержка</h3>
+            <p>Круглосуточная помощь в решении любых вопросов</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Услуги */}
+      <section className={styles.services}>
+        <h2 className={styles.sectionTitle}>Наши услуги</h2>
+        <div className={styles.servicesList}>
+          <div className={styles.serviceItem}>
+            <h3>Проектирование</h3>
+            <p>Разработка индивидуальных решений под ваши задачи</p>
+          </div>
+          <div className={styles.serviceItem}>
+            <h3>Монтаж</h3>
+            <p>Установка и настройка оборудования любой сложности</p>
+          </div>
+          <div className={styles.serviceItem}>
+            <h3>Обслуживание</h3>
+            <p>Регулярное техническое обслуживание и ремонт</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Призыв к действию */}
+      <section className={styles.cta}>
+        <div className={styles.ctaContent}>
+          <h2>Готовы начать?</h2>
+          <p>Свяжитесь с нами для бесплатной консультации</p>
+          <a href="#contact" className={styles.ctaButton}>
+            Связаться с нами
+          </a>
+        </div>
+      </section>
     </div>
   );
-}
+} 

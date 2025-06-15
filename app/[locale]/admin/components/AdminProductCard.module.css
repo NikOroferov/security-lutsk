@@ -1,0 +1,101 @@
+.card {
+  display: grid;
+  grid-template-columns: 50px 2fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 4px;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imageContainer {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.nameUk {
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+.price {
+  font-weight: 500;
+  color: #333333;
+}
+
+.featured {
+  color: #666666;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.editButton,
+.deleteButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.editButton {
+  background-color: #4A90E2;
+  color: #FFFFFF;
+}
+
+.editButton:hover {
+  background-color: #357ABD;
+}
+
+.deleteButton {
+  background-color: #E74C3C;
+  color: #FFFFFF;
+}
+
+.deleteButton:hover {
+  background-color: #C0392B;
+}
+
+@media (max-width: 767px) {
+  .card {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .imageContainer {
+    margin: 0 auto;
+  }
+
+  .name,
+  .price,
+  .featured {
+    text-align: center;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+} 

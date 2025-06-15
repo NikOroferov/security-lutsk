@@ -1,0 +1,139 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.container h2 {
+  color: #333333;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.table {
+  border: 1px solid #CCCCCC;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 50px 2fr 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  background: #F5F5F5;
+  border-radius: 4px;
+  font-weight: 500;
+  color: #333333;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 80px 2fr 1fr 1fr 1fr;
+  padding: 1rem;
+  border-top: 1px solid #CCCCCC;
+  align-items: center;
+}
+
+.row:hover {
+  background-color: #F5F5F5;
+}
+
+.cell {
+  padding: 0.5rem;
+}
+
+.imageContainer {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.nameUk {
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.editButton,
+.deleteButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.editButton {
+  background-color: #333333;
+  color: #FFFFFF;
+}
+
+.editButton:hover {
+  background-color: #4A4A4A;
+}
+
+.deleteButton {
+  background-color: #C41E3A;
+  color: #FFFFFF;
+}
+
+.deleteButton:hover {
+  background-color: #9B1B1B;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #666666;
+}
+
+.error {
+  text-align: center;
+  padding: 2rem;
+  color: #E74C3C;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .header {
+    display: none;
+  }
+
+  .header,
+  .row {
+    grid-template-columns: 60px 1fr 1fr;
+  }
+
+  .header .cell:nth-child(3),
+  .header .cell:nth-child(4),
+  .row .cell:nth-child(3),
+  .row .cell:nth-child(4) {
+    display: none;
+  }
+} 
